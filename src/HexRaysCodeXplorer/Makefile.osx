@@ -21,7 +21,8 @@ SRC=$(SRCDIR)CodeXplorer.cpp \
     $(SRCDIR)TypeExtractor.cpp \
     $(SRCDIR)TypeReconstructor.cpp \
     $(SRCDIR)MicrocodeExtractor.cpp \
-    $(SRCDIR)Utility.cpp
+    $(SRCDIR)Utility.cpp \
+    $(SRCDIR)Compat.cpp
 
 #SRC = $(wildcard src/*.cpp)
 #OBJS=$(subst .cpp,.o,$(SRC))

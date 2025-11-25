@@ -45,7 +45,8 @@ SRC=$(SRCDIR)CodeXplorer.cpp \
     $(SRCDIR)reconstructed_place_t.cpp \
     $(SRCDIR)TypeExtractor.cpp \
     $(SRCDIR)TypeReconstructor.cpp \
-    $(SRCDIR)Utility.cpp
+    $(SRCDIR)Utility.cpp \
+    $(SRCDIR)Compat.cpp
 
 OBJS=$(subst .cpp,.o,$(SRC))
 EXECUTABLE=HexRaysCodeXplorer
