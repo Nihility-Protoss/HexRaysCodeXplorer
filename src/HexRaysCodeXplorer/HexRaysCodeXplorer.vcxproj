@@ -111,11 +111,13 @@
       <PreprocessorDefinitions>__MAKEDLL__;__NT__;__IDP__;__X64__;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(IDASDK)\include;$(IDADIR)\plugins\hexrays_sdk\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ida.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;idalib.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>$(IDASDK)\lib\x64_win_vc_32;$(IDASDK)\lib\x64_win_vc_32_pro</AdditionalLibraryDirectories>
     </Link>
@@ -129,11 +131,13 @@
       <PreprocessorDefinitions>__MAKEDLL__;__NT__;__IDP__;__EA64__;__X64__;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(IDASDK)\include;$(IDADIR)\plugins\hexrays_sdk\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ida.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;idalib.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>$(IDASDK)\lib\x64_win_vc_64;$(IDASDK)\lib\x64_win_vc_64_pro</AdditionalLibraryDirectories>
     </Link>
@@ -150,13 +154,15 @@
       <AdditionalIncludeDirectories>$(IDASDK)\include;$(IDADIR)\plugins\hexrays_sdk\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>ida.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;idalib.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>$(IDASDK)\lib\x64_win_vc_32;$(IDASDK)\lib\x64_win_vc_32_pro</AdditionalLibraryDirectories>
     </Link>
@@ -173,18 +179,21 @@
       <AdditionalIncludeDirectories>$(IDASDK)\include;$(IDADIR)\plugins\hexrays_sdk\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>ida.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ida.lib;idalib.lib;pro.lib;compress.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalLibraryDirectories>$(IDASDK)\lib\x64_win_vc_64;$(IDASDK)\lib\x64_win_vc_64_pro</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(IDASDK)\lib\x64_win_vc_64;$(IDASDK)\lib\x64_win_vc_64_s</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Compat.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="CtreeExtractor.cpp" />
     <ClCompile Include="GCCObjectFormatParser.cpp" />
@@ -222,6 +231,10 @@
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="makefile.lnx" />
+    <None Include="makefile.mac" />
+    <None Include="Makefile.osx" />
+    <None Include="makefile7.mac" />
     <None Include="PropertySheet.props" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

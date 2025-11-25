@@ -37,7 +37,7 @@
     #define DLLEXPORT
 #endif
 
-
+//#define DLLEXPORT
 
 
 #if !defined (__LINUX__) && !defined (__MAC__)

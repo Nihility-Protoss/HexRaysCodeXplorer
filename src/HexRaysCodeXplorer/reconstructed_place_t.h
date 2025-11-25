@@ -1,6 +1,6 @@
 #pragma once
 #include "Common.h"
-
+#define ulong unsigned long
 
 enum reconstructed_place_pos_t {
 	REPLACE_SPLIT = 0,

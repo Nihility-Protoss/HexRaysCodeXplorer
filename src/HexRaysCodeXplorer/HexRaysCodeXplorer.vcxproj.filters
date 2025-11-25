@@ -17,6 +17,7 @@
     <ClCompile Include="TypeReconstructor.cpp" />
     <ClCompile Include="TypeExtractor.cpp" />
     <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="Compat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -44,6 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props">
+      <Filter>资源段</Filter>
+    </None>
+    <None Include="makefile.lnx">
+      <Filter>资源段</Filter>
+    </None>
+    <None Include="makefile.mac">
+      <Filter>资源段</Filter>
+    </None>
+    <None Include="Makefile.osx">
+      <Filter>资源段</Filter>
+    </None>
+    <None Include="makefile7.mac">
       <Filter>资源段</Filter>
     </None>
   </ItemGroup>
